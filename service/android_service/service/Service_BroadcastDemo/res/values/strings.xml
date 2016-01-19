@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Service_Broadcast_Demo</string>
+    <string name="hello">请启动Service</string>
+    <string name="myButton1">启动Service</string>
+    <string name="myButton2">停止Service</string>
+        
+</resources>
