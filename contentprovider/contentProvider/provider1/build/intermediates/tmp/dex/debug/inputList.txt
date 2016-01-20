@@ -1,0 +1,1 @@
+D:\public\GuruAndroid\contentprovider\contentProvider\provider1\build\intermediates\classes\debug

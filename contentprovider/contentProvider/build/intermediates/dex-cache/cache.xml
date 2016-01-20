@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="D:\public\GuruAndroid\contentprovider\contentProvider\bookprovider\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="D:\public\GuruAndroid\contentprovider\contentProvider\bookprovider\build\intermediates\pre-dexed\debug\classes-f0baf61c46fe6f631ee0c32ef0b721235fa9fa22.jar" />
+    </item>
+    <item
+        jar="D:\public\GuruAndroid\contentprovider\contentProvider\bookgallery\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="D:\public\GuruAndroid\contentprovider\contentProvider\bookgallery\build\intermediates\pre-dexed\debug\classes-efb64448ed917d1994a6c6c58629d19c15d282fe.jar" />
+    </item>
+    <item
+        jar="D:\public\GuruAndroid\contentprovider\contentProvider\provider4\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="D:\public\GuruAndroid\contentprovider\contentProvider\provider4\build\intermediates\pre-dexed\debug\classes-fd37aebca007c9a97c8c7b14600c85e8d7bb4851.jar" />
+    </item>
+    <item
+        jar="D:\public\GuruAndroid\contentprovider\contentProvider\provider4\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\libs\internal_impl-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="D:\public\GuruAndroid\contentprovider\contentProvider\provider4\build\intermediates\pre-dexed\debug\internal_impl-23.1.1-446b4c302275d4fc0ff8964dcad4c51ce317bc63.jar" />
+    </item>
+    <item
+        jar="D:\public\GuruAndroid\contentprovider\contentProvider\provider3\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="D:\public\GuruAndroid\contentprovider\contentProvider\provider3\build\intermediates\pre-dexed\debug\classes-ba67092b01f0591fbf088c33a5415876aafc2bf9.jar" />
+    </item>
+    <item
+        jar="D:\public\GuruAndroid\contentprovider\contentProvider\provider3\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="D:\public\GuruAndroid\contentprovider\contentProvider\provider3\build\intermediates\pre-dexed\debug\classes-f73ba0f99075e8704972a0b1e287b82820d18293.jar" />
+    </item>
+    <item
+        jar="D:\public\GuruAndroid\contentprovider\contentProvider\provider2\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="D:\public\GuruAndroid\contentprovider\contentProvider\provider2\build\intermediates\pre-dexed\debug\classes-046faf7ea3e2a7ee6dbec3e07e0cd19688debc7e.jar" />
+    </item>
+    <item
+        jar="D:\public\GuruAndroid\contentprovider\contentProvider\provider2\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="D:\public\GuruAndroid\contentprovider\contentProvider\provider2\build\intermediates\pre-dexed\debug\classes-0dea9089d3759ee3ed1c1d9ec874bd0195a15ede.jar" />
+    </item>
+    <item
+        jar="D:\public\GuruAndroid\contentprovider\contentProvider\provider2\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\libs\internal_impl-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="D:\public\GuruAndroid\contentprovider\contentProvider\provider2\build\intermediates\pre-dexed\debug\internal_impl-23.1.1-045a35ff6902e8fbbd169558701c4597c0ffcf0e.jar" />
+    </item>
+    <item
+        jar="D:\public\GuruAndroid\contentprovider\contentProvider\bookprovider\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="D:\public\GuruAndroid\contentprovider\contentProvider\bookprovider\build\intermediates\pre-dexed\debug\classes-7c2b9dec22b61d79d602eeb05bd17b58481a1040.jar" />
+    </item>
+    <item
+        jar="D:\public\GuruAndroid\contentprovider\contentProvider\bookgallery\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\libs\internal_impl-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="D:\public\GuruAndroid\contentprovider\contentProvider\bookgallery\build\intermediates\pre-dexed\debug\internal_impl-23.1.1-c0b67f8098136476a52473c3de522e6a372dce53.jar" />
+    </item>
+    <item
+        jar="D:\public\GuruAndroid\contentprovider\contentProvider\provider4\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="D:\public\GuruAndroid\contentprovider\contentProvider\provider4\build\intermediates\pre-dexed\debug\classes-01f0df21a2021a617b331689b05b5483548aff13.jar" />
+    </item>
+    <item
+        jar="D:\public\GuruAndroid\contentprovider\contentProvider\provider3\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\libs\internal_impl-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="D:\public\GuruAndroid\contentprovider\contentProvider\provider3\build\intermediates\pre-dexed\debug\internal_impl-23.1.1-248ea4be633bf1aa4ac18663b62bc0b5d7d047d3.jar" />
+    </item>
+    <item
+        jar="D:\public\GuruAndroid\contentprovider\contentProvider\bookprovider\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\libs\internal_impl-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="D:\public\GuruAndroid\contentprovider\contentProvider\bookprovider\build\intermediates\pre-dexed\debug\internal_impl-23.1.1-f4a9f0c9e6d7b1fec7580091f44e748a882342ed.jar" />
+    </item>
+    <item
+        jar="D:\andr\adt_win\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="D:\public\GuruAndroid\contentprovider\contentProvider\provider2\build\intermediates\pre-dexed\debug\support-annotations-23.1.1-e3d89848e036abdd43498a98149a5b08a0eadf0d.jar" />
+    </item>
+    <item
+        jar="D:\public\GuruAndroid\contentprovider\contentProvider\bookgallery\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="D:\public\GuruAndroid\contentprovider\contentProvider\bookgallery\build\intermediates\pre-dexed\debug\classes-f76ada31b52e6437e89a7a61d71d908779d03e3e.jar" />
+    </item>
+
+</items>

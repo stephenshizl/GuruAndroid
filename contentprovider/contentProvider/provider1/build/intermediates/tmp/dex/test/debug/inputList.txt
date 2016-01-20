@@ -1,0 +1,1 @@
+/Users/hahong/Desktop/android/ex08_2_contentProvider/app/build/intermediates/classes/test/debug
