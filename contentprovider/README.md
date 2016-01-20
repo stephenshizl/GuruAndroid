@@ -19,7 +19,7 @@
 
 
 ###ContentProvider权限 (参考BookProvider和BookGallery)
-![](https://raw.githubusercontent.com/fitzlee/GuruAndroid/master/contentprovider/_images/bookgallery.jpg)
+![](https://raw.githubusercontent.com/fitzlee/GuruAndroid/master/contentprovider/_images/bookgallery.png)
 ```java
   //Server
  <permission android:name="com.android.provider.book.READ_DATABASE" android:protectionLevel="normal" />
@@ -73,8 +73,8 @@ public String getType(Uri uri)：该方法用于返回当前Url所代表数据的MIME类型。
 ```
 
 具体实现：(参考provider3,程序输出在log；Provider1和2也可)
-![](https://raw.githubusercontent.com/fitzlee/GuruAndroid/master/contentprovider/_images/provider2.jpg)
-![](https://raw.githubusercontent.com/fitzlee/GuruAndroid/master/contentprovider/_images/provider1.jpg)
+![](https://raw.githubusercontent.com/fitzlee/GuruAndroid/master/contentprovider/_images/provider2.png)
+![](https://raw.githubusercontent.com/fitzlee/GuruAndroid/master/contentprovider/_images/provider1.png)
 ```java
 //提供Client完整接口
 public class Student implements BaseColumns {
@@ -334,14 +334,8 @@ MediaStore.Audio.Video.INTERNAL_CONTENT_URI  手机内部存储器上的视频
 ```
 
 
-
 ###参考
-[ContentProvider的一个例子][ContentProvider1]
-[ContentProvider详细介绍][csdn2]
-[ContentProvider的使用小结][chinaunix]
-
-
-[ContentProvider1]: http://aijiawang-126-com.iteye.com/blog/655268
-[csdn1]: http://blog.csdn.net/bage1988320/article/details/6749870#
-[csdn2]: http://blog.csdn.net/wirelessqa/article/details/8618831
-[chinaunix1]: http://blog.chinaunix.net/uid-24129645-id-3758633.html
+- http://aijiawang-126-com.iteye.com/blog/655268
+- http://blog.csdn.net/bage1988320/article/details/6749870#
+- http://blog.csdn.net/wirelessqa/article/details/8618831
+- http://blog.chinaunix.net/uid-24129645-id-3758633.html
