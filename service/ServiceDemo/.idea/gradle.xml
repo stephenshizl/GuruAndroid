@@ -9,6 +9,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/bindservice" />
+            <option value="$PROJECT_DIR$/broadcast" />
             <option value="$PROJECT_DIR$/localService" />
             <option value="$PROJECT_DIR$/threadcommservice" />
           </set>

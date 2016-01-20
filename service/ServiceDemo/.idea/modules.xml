@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ServiceDemo.iml" filepath="$PROJECT_DIR$/ServiceDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bindservice/bindservice.iml" filepath="$PROJECT_DIR$/bindservice/bindservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/broadcast/broadcast.iml" filepath="$PROJECT_DIR$/broadcast/broadcast.iml" />
       <module fileurl="file://$PROJECT_DIR$/localService/localService.iml" filepath="$PROJECT_DIR$/localService/localService.iml" />
       <module fileurl="file://$PROJECT_DIR$/threadcommservice/threadcommservice.iml" filepath="$PROJECT_DIR$/threadcommservice/threadcommservice.iml" />
     </modules>

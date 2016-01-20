@@ -42,5 +42,286 @@ Service 的终止，需要unbindService与stopService同时调用，才能终止 Service，不管st
 当一个Service被终止（1、调用stopService；2、调用stopSelf；3、不再有绑定的连接（没有被启动））时，onDestroy方法将会被调用   
 start+stop 和 bind+unbind 必须是一对  
 
+
+
+###主要使用方法
+
+#####Remote AIDL  (参考ServiceDemo/bindservice/MusicService)
+
+![alt text](https://raw.githubusercontent.com/fitzlee/GuruAndroid/master/_images/aidl_remote_register_callback.jpg)
+
+```java
+interface IParticipateCallback {
+    // 用户加入或者离开的回调
+    void onParticipate(String name, boolean joinOrLeave);
+}
+interface IRemoteService {
+    int someOperate(int a, int b);
+
+    void join(IBinder token, String name);
+    void leave(IBinder token);
+    List<String> getParticipators();
+
+    void registerParticipateCallback(IParticipateCallback cb);
+    void unregisterParticipateCallback(IParticipateCallback cb);
+}
+
+public class RemoteService extends Service {
+
+    private static final String TAG = RemoteService.class.getSimpleName();
+
+    private List<Client> mClients = new ArrayList<>();
+
+    private RemoteCallbackList<IParticipateCallback> mCallbacks = new RemoteCallbackList<>();
+
+    private final IRemoteService.Stub mBinder = new IRemoteService.Stub() {
+        @Override
+        public int someOperate(int a, int b) throws RemoteException {
+            Log.d(TAG, "called RemoteService someOperate()");
+            return a + b;
+        }
+
+        @Override
+        public void join(IBinder token, String name) throws RemoteException {
+            int idx = findClient(token);
+            if (idx >= 0) {
+                Log.d(TAG, "already joined");
+                return;
+            }
+
+            Client client = new Client(token, name);
+
+            // 注册客户端死掉的通知
+            token.linkToDeath(client, 0);
+            mClients.add(client);
+
+            // 通知client加入
+            notifyParticipate(client.mName, true);
+        }
+
+        @Override
+        public void leave(IBinder token) throws RemoteException {
+            int idx = findClient(token);
+            if (idx < 0) {
+                Log.d(TAG, "already left");
+                return;
+            }
+
+            Client client = mClients.get(idx);
+            mClients.remove(client);
+
+            // 取消注册
+            client.mToken.unlinkToDeath(client, 0);
+
+            // 通知client离开
+            notifyParticipate(client.mName, false);
+        }
+
+        @Override
+        public List<String> getParticipators() throws RemoteException {
+            ArrayList<String> names = new ArrayList<>();
+            for (Client client : mClients) {
+                names.add(client.mName);
+            }
+            return names;
+        }
+
+        @Override
+        public void registerParticipateCallback(IParticipateCallback cb) throws RemoteException {
+            mCallbacks.register(cb);
+        }
+
+        @Override
+        public void unregisterParticipateCallback(IParticipateCallback cb) throws RemoteException {
+            mCallbacks.unregister(cb);
+        }
+    };
+
+    public RemoteService() {
+    }
+
+    private int findClient(IBinder token) {
+        for (int i = 0; i < mClients.size(); i++) {
+            if (mClients.get(i).mToken == token) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    private void notifyParticipate(String name, boolean joinOrLeave) {
+        final int len = mCallbacks.beginBroadcast();
+        for (int i = 0; i < len; i++) {
+            try {
+                // 通知回调
+                mCallbacks.getBroadcastItem(i).onParticipate(name, joinOrLeave);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        }
+        mCallbacks.finishBroadcast();
+    }
+
+    @Override
+    public IBinder onBind(Intent intent) {
+        return mBinder;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Log.i("service","destroy");
+        // 取消掉所有的回调
+        mCallbacks.kill();
+    }
+
+    private final class Client implements IBinder.DeathRecipient {
+        public final IBinder mToken;
+        public final String mName;
+
+        public Client(IBinder token, String name) {
+            mToken = token;
+            mName = name;
+        }
+
+        @Override
+        public void binderDied() {
+            // 客户端死掉，执行此回调
+            int index = mClients.indexOf(this);
+            if (index < 0) {
+                return;
+            }
+
+            Log.d(TAG, "client died: " + mName);
+            mClients.remove(this);
+
+            // 通知client离开
+            notifyParticipate(mName, false);
+        }
+    }
+}
+
+```
+
+
+#####Local BindService
+```java
+public class MusicService extends Service
+	public class MyBinder extends Binder {
+		public MusicService getService() {
+			return MusicService.this;
+		}
+	}
+	
+	public void MyMethod(){
+		//your methods
+	}
+}
+```
+
+
+```java
+public class MainActivity extends Activity{
+
+	ServiceConnection conn = new ServiceConnection() {
+
+			@Override
+			public void onServiceDisconnected(ComponentName name) {
+				
+			}
+
+			@Override
+			public void onServiceConnected(ComponentName name, IBinder service) {
+				MusicService.MyBinder binder = (MusicService.MyBinder) service;
+				bindService = binder.getService();
+			}
+	};
+	
+	void test(){
+		//调用service的接口
+		bindService.MyMethod();
+		//注：可以使用broadcast或者注册回调interface来实现service主动通知Activity
+	}
+}
+```
+
+#####IntentService = thread+service
+
+```java
+public class MyIntentService extends IntentService {
+	private static String TAG = "MusicService";
+
+	public MyIntentService() {
+		super("MyIntentServiceName");
+	}
+
+	@Override
+	protected void onHandleIntent(Intent intent) {
+		// IntentService使用队列的方式将请求的Intent加入队列，然后开启一个worker
+		// thread(线程)来处理队列中的Intent
+		// 对于异步的startService请求，IntentService会处理完成一个之后再处理第二个
+		try {
+			int time = 20000;
+			Log.e(TAG, "begin sleep" + time);
+			Thread.sleep(time);
+			Log.e(TAG, "after sleep" + time);
+
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
+	}
+}
+```
+
+#####Broadcast+Service
+```java
+public MyService extends service{
+
+	@Override
+	public void onDestroy() {   //重写的onDestroy方法
+		myThread.flag = false;  //停止线程运行
+		super.onDestroy();
+	}
+
+	@Override
+	public int onStartCommand(Intent intent, int flags, int startId) {
+		myThread = new MyThread() ;  //初始化线程
+		myThread.start();            //启动线程
+		return super.onStartCommand(intent, flags, startId);
+	}
+
+	//定义线程类
+	class MyThread extends Thread{
+		boolean flag = true;        //循环标志位
+		int c = 0;                  //其值为发送的消息
+		@Override
+		public void run() {
+			while(flag){
+				Intent i = new Intent("cn.com.sgmsc.ServBroad.myThread");//创建Intent
+				i.putExtra("myThread", c);      //放入数据
+				sendBroadcast(i);               //发送广播
+				c++;
+				try{
+					Thread.sleep(1000);        //睡眠指定毫秒数
+				}catch(Exception e){           //捕获异常
+					e.printStackTrace();       //打印异常
+				}
+			}
+		}
+	};
+}
+```
+
+#####System Service
+```java
+TelephonyManager tManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+SmsManager sManager = SmsManager.getDefault();
+```
+
+
+###原理
+
+
 [service_life]: http://www.cnblogs.com/mengdd/archive/2013/03/24/2979944.html
 

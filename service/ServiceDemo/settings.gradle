@@ -1,1 +1,1 @@
-include ':localService', ':threadcommservice'
+include ':localService', ':threadcommservice', ':broadcast', ':bindservice'

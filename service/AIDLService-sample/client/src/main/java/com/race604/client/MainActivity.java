@@ -127,7 +127,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 Intent intent = new Intent(IRemoteService.class.getName());
                 intent.setClassName("com.race604.remoteservice", "com.race604.remoteservice.RemoteService");
                 //intent.setPackage("com.race604.remoteservice");
-                bindService(intent, mServiceConnection, BIND_AUTO_CREATE);//如果没有，自动创建service
+                bindService(intent, mServiceConnection, BIND_AUTO_CREATE);
                 mIsBound = true;
                 break;
             case R.id.unbind:
