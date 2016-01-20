@@ -19,7 +19,7 @@
 
 
 ###ContentProvider权限 (参考BookProvider和BookGallery)
-![](https://raw.githubusercontent.com/fitzlee/GuruAndroid/master/contentprovider/_images/bookgallery.png =200)
+![](https://raw.githubusercontent.com/fitzlee/GuruAndroid/master/contentprovider/_images/bookgallery.png =320x180)
 ```java
   //Server
  <permission android:name="com.android.provider.book.READ_DATABASE" android:protectionLevel="normal" />
@@ -73,8 +73,8 @@ public String getType(Uri uri)：该方法用于返回当前Url所代表数据的MIME类型。
 ```
 
 具体实现：(参考provider3,程序输出在log；Provider1和2也可)
-![](https://raw.githubusercontent.com/fitzlee/GuruAndroid/master/contentprovider/_images/provider2.png =300)
-![](https://raw.githubusercontent.com/fitzlee/GuruAndroid/master/contentprovider/_images/provider1.png =400)
+![](https://raw.githubusercontent.com/fitzlee/GuruAndroid/master/contentprovider/_images/provider2.png =320x180)
+![](https://raw.githubusercontent.com/fitzlee/GuruAndroid/master/contentprovider/_images/provider1.png =320x180)
 ```java
 //提供Client完整接口
 public class Student implements BaseColumns {
