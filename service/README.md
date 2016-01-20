@@ -46,9 +46,9 @@ start+stop 和 bind+unbind 必须是一对
 
 ###主要使用方法
 
-#####Remote AIDL  (参考ServiceDemo/bindservice/MusicService)
+#####Remote AIDL  (参考AIDLService-sample/client service servicelib)
 
-![alt text](https://raw.githubusercontent.com/fitzlee/GuruAndroid/master/_images/aidl_remote_register_callback.jpg)
+![](https://raw.githubusercontent.com/fitzlee/GuruAndroid/master/service/_images/aidl_remote_register_callback.jpg)
 
 ```java
 interface IParticipateCallback {
@@ -204,7 +204,8 @@ public class RemoteService extends Service {
 ```
 
 
-#####Local BindService
+#####Local BindService (参考ServiceDemo/bindservice/MusicService)
+![](https://raw.githubusercontent.com/fitzlee/GuruAndroid/master/service/_images/bindservice_music.jpg)
 ```java
 public class MusicService extends Service
 	public class MyBinder extends Binder {
@@ -275,6 +276,8 @@ public class MyIntentService extends IntentService {
 ```
 
 #####Broadcast+Service
+![](https://raw.githubusercontent.com/fitzlee/GuruAndroid/master/service/_images/broadcast.jpg)
+
 ```java
 public MyService extends service{
 
