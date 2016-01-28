@@ -1,6 +1,19 @@
 #应用快速开发
 
 
+###前台&后台
+
+#####1. 前台
+- UI
+
+#####2. 后台
+- Cache
+- Database
+- Request
+- DesignModel
+- Bus
+
+
 ###项目框架
 adapter 适配器，如果业务复杂，根据不同的业务可以添加子包来进行分类；
 base 用来存放View的基类，例如BaseAcitivity、BaseFragment，甚至可以添加某些不同actionbar主题的Base类；
