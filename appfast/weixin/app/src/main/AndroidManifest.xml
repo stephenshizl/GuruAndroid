@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.dacas.leef.weixin" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity android:name=".MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="cn.dacas.leef.activity.LoginActivity"  android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="cn.dacas.leef.activity.RegisterActivity"  android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="cn.dacas.leef.activity.FriendMsgActivity"  android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="cn.dacas.leef.activity.PublishUserListActivity"  android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="cn.dacas.leef.activity.PublicActivity"  android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="cn.dacas.leef.activity.SearchActivity"  android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="cn.dacas.leef.activity.NewFriendsListActivity"  android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="cn.dacas.leef.activity.GroupListActivity"  android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="cn.dacas.leef.activity.PublishMsgListActivity"  android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="cn.dacas.leef.activity.SettingActivity"  android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="cn.dacas.leef.activity.AlbumActivity"  android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="cn.dacas.leef.activity.PublishMsgDetailActivity"  android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="cn.dacas.leef.activity.GetMoneyActivity"  android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="cn.dacas.leef.activity.SetMoneyActivity"  android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="cn.dacas.leef.activity.AddFromContactActivity"  android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="cn.dacas.leef.activity.EditUserNameActivity"  android:screenOrientation="portrait">
+        </activity>
+        
+    </application>
+
+</manifest>
